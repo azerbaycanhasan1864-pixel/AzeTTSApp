@@ -22,6 +22,11 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Generate gradlew
+        run: |
+          cd AzeTTSApp
+          gradle wrapper
+
       - name: Make gradlew executable
         run: chmod +x AzeTTSApp/gradlew
 
