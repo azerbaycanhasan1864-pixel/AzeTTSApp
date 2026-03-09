@@ -22,6 +22,12 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Add gradle.properties
+        run: |
+          echo "android.useAndroidX=true" >> AzeTTSApp/gradle.properties
+          echo "android.enableJetifier=true" >> AzeTTSApp/gradle.properties
+          echo "org.gradle.jvmargs=-Xmx2048m" >> AzeTTSApp/gradle.properties
+
       - name: Generate gradlew
         run: |
           cd AzeTTSApp
